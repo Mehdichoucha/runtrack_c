@@ -3,16 +3,17 @@
 
 int main()
 {
-    char c;
-    c = 'A';
+    char str[] = "987654321"; // change the value between the quotes to change the final result
+    int i = 0;
 
-    if (isdigit(c) == 0) {
-        printf("%c is a character", c);
-        return 1;
-    } 
-    
-    else {
-        printf("%c is a digit", c);
-        return 0;
+    while (str[i] != '\0') {
+        if (!isdigit(str[i])) {
+            printf("There is at least one other character");
+            return 1;
+        }
+        i++;
     }
+
+    printf("There is only digits");
+    return 0;
 }
